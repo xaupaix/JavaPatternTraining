@@ -1,4 +1,4 @@
-package TestHelloWorld;
+package be.abis.hello.test;
 
 public class HelloWorld {
 
