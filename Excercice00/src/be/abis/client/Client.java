@@ -1,6 +1,6 @@
-package be.abis.Client;
+package be.abis.client;
 
-import be.abis.shape.*;
+import be.abis.model.*;
 
 public class Client {
 

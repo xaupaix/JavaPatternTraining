@@ -1,4 +1,4 @@
-package be.abis.shape;
+package be.abis.model;
 
 public class Circle extends Shape {
 
@@ -6,22 +6,20 @@ public class Circle extends Shape {
 	private String color;
 
 	public Circle(Double radius,String color){
-
 		this.radius=radius;
 		this.color=color;
 	}
 
 	@Override
-	public Double area() {
-		return 2*Math.PI*getRadius();
-	}
-
-	@Override
-	public String getColor() {
-		return color;
+	public double area() {
+		return Math.PI* Math.pow(getRadius(),2);
 	}
 
 	public Double getRadius() {
 		return radius;
+	}
+
+	public void setRadius(Double radius){
+		this.radius=radius;
 	}
 }

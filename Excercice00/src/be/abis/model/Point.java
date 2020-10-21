@@ -1,4 +1,4 @@
-package be.abis.shape;
+package be.abis.model;
 
 public class Point {
 
