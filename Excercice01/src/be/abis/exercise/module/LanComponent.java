@@ -2,18 +2,18 @@ package be.abis.exercise.module;
 
 public abstract class LanComponent {
 
-	public String address;
-	public LanComponent nextComponent;
+	private String address;
+	private LanComponent nextComponent;
 
 	public LanComponent(String address){
 		this.address=address;
 	}
 
-	public String getAdress() {
+	public String getAddress() {
 		return address;
 	}
 
-	public void setAdress(String adress) {
+	public void setAddress(String address) {
 		this.address = address;
 	}
 

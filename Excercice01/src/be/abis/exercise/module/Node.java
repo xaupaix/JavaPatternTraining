@@ -19,6 +19,6 @@ public class Node extends LanComponent {
 
 	public void toPrint()
 	{
-		System.out.println(getClass().getSimpleName() + " " + getAdress() +" received the packet" );
+		System.out.println(getClass().getSimpleName() + " " + getAddress() +" received the packet" );
 	}
 }

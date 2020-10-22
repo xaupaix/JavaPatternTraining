@@ -9,7 +9,7 @@ public class PrintServer extends Node{
 	@Override
 	public void receive(Packet packet) {
 		toPrint();
-		if(packet.getDestinationAdress().equals(address))
+		if(packet.getDestinationAddress().equals(getAddress()))
 		{
 			print(packet);
 		}
@@ -21,6 +21,6 @@ public class PrintServer extends Node{
 
 	public void print(Packet packet)
 	{
-		System.out.println("Packet is printed by PrintServer : " +packet.getContents().toString());
+		System.out.println("Packet is printed by PrintServer : " +packet.getContents());
 	}
 }
