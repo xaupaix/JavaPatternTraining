@@ -2,9 +2,10 @@ package be.abis.model;
 
 public class Circle extends Shape {
 
-	private Double radius;
+	private double radius;
 
-	public Circle(Double radius,String color){
+	public Circle(String color,double radius){
+		super(color);
 		this.radius=radius;
 	}
 
@@ -13,11 +14,11 @@ public class Circle extends Shape {
 		return Math.PI* Math.pow(getRadius(),2);
 	}
 
-	public Double getRadius() {
+	public double getRadius() {
 		return radius;
 	}
 
-	public void setRadius(Double radius){
+	public void setRadius(double radius){
 		this.radius=radius;
 	}
 }

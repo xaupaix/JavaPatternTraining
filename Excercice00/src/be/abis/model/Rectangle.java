@@ -2,10 +2,11 @@ package be.abis.model;
 
 public class Rectangle extends Shape {
 
-	private Double height;
-	private Double width;
+	private double height;
+	private double width;
 
-	public Rectangle(Double height,Double width){
+	public Rectangle(String color,double height,double width){
+		super(color);
 		this.height=height;
 		this.width=width;
 	}
@@ -15,19 +16,19 @@ public class Rectangle extends Shape {
 		return getHeight()*getWidth();
 	}
 
-	public Double getHeight() {
+	public double getHeight() {
 		return height;
 	}
 
-	public void setHeight(Double height) {
+	public void setHeight(double height) {
 		this.height = height;
 	}
 
-	public Double getWidth() {
+	public double getWidth() {
 		return width;
 	}
 
-	public void setWidth(Double width) {
+	public void setWidth(double width) {
 		this.width = width;
 	}
 }
