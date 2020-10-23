@@ -1,30 +1,37 @@
 package be.abis.exercise.module;
 
-public class PrintServer extends Node{
+public class PrintServer extends PacketHandler{
 
 	private PrinterStrategy printerStrategy;
 
 	public PrintServer(String address, PrinterStrategy printerStrategy) {
 		super(address);
 		this.printerStrategy=printerStrategy;
-
 	}
 
-	@Override
 	public void receive(Packet packet) {
-		toPrint();
+		super.receive(packet);
 		if(packet.getDestinationAddress().equals(getAddress()))
 		{
-			print(packet);
+			process(packet);
 		}
 		else
 		{
-			send(packet);
+			super.send(packet);
 		}
 	}
 
-	public void print(Packet packet)
+	public void process(Packet packet)
 	{
-		System.out.println("Packet is printed by PrintServer (" + printerStrategy.print() + ") : " +packet.getContents());
+		super.process(packet,"PrintServer");
+		System.out.println("printed with "+ printerStrategy.print());
+	}
+
+	public PrinterStrategy getPrinterStrategy() {
+		return printerStrategy;
+	}
+
+	public void setPrinterStrategy(PrinterStrategy printerStrategy) {
+		this.printerStrategy = printerStrategy;
 	}
 }

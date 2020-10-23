@@ -1,8 +1,8 @@
 package be.abis.exercise.module;
 
-public class Node extends LanComponent {
+public abstract class PacketHandler extends LanComponent{
 
-	public Node(String address){
+	public PacketHandler(String address) {
 		super(address);
 	}
 
@@ -14,11 +14,16 @@ public class Node extends LanComponent {
 	@Override
 	public void receive(Packet packet) {
 		toPrint();
-		send(packet);
 	}
 
 	public void toPrint()
 	{
 		System.out.println(getClass().getSimpleName() + " " + getAddress() +" received the packet" );
 	}
+
+	public void process(Packet packet, String type)
+	{
+		System.out.println("Packet is treated by " + type + " : " +packet.getContents());
+	}
+
 }
