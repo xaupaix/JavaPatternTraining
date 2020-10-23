@@ -10,8 +10,17 @@ public abstract class PacketHandler extends Node{
 		getNextComponent().receive(packet);
 	}
 
-	public void receive(Packet packet) {
-		toPrint();
+	public void receive(Packet packet)
+	{
+		super.toPrint();
+		if(packet.getDestinationAddress().equals(getAddress()))
+		{
+			process(packet);
+		}
+		else
+		{
+			super.send(packet);
+		}
 	}
 
 	public void toPrint()
@@ -19,9 +28,6 @@ public abstract class PacketHandler extends Node{
 		System.out.println(getClass().getSimpleName() + " " + getAddress() +" received the packet" );
 	}
 
-	public void process(Packet packet, String type)
-	{
-		System.out.println("Packet is treated by " + type + " : " +packet.getContents());
-	}
+	public abstract void process(Packet packet);
 
 }
