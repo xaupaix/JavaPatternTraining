@@ -6,10 +6,6 @@ public abstract class PacketHandler extends Node{
 		super(address);
 	}
 
-	public void send(Packet packet) {
-		getNextComponent().receive(packet);
-	}
-
 	public void receive(Packet packet)
 	{
 		super.toPrint();
