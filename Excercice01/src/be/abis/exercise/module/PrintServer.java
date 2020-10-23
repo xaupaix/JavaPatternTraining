@@ -2,8 +2,12 @@ package be.abis.exercise.module;
 
 public class PrintServer extends Node{
 
-	public PrintServer(String address) {
+	private PrinterStrategy printerStrategy;
+
+	public PrintServer(String address, PrinterStrategy printerStrategy) {
 		super(address);
+		this.printerStrategy=printerStrategy;
+
 	}
 
 	@Override
@@ -21,6 +25,6 @@ public class PrintServer extends Node{
 
 	public void print(Packet packet)
 	{
-		System.out.println("Packet is printed by PrintServer : " +packet.getContents());
+		System.out.println("Packet is printed by PrintServer (" + printerStrategy.print() + ") : " +packet.getContents());
 	}
 }
