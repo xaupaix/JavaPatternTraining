@@ -14,15 +14,15 @@ import be.abis.exercise.module.WorkStation;
 public class main {
 
 	public static void main (String[] args){
-		LanComponent node1= new WorkStation("192.168.1.1");
-		LanComponent node2= new Node("192.168.1.2");
-		LanComponent node3= new PrintServer("192.168.1.3", new InktJet());
-		LanComponent node4= new Node("192.168.1.4");
-		LanComponent node5= new PrintServer("192.168.1.5", new Laser());
-		LanComponent node6= new Node("192.168.1.6");
-		LanComponent node7= new FileServer("192.168.1.7");
-		LanComponent node8= new Node("192.168.1.8");
-		LanComponent node9= new MQServer("192.168.1.9");
+		Node node1= new WorkStation("192.168.1.1");
+		Node node2= new Node("192.168.1.2");
+		Node node3= new PrintServer("192.168.1.3", new InktJet());
+		Node node4= new Node("192.168.1.4");
+		Node node5= new PrintServer("192.168.1.5", new Laser());
+		Node node6= new Node("192.168.1.6");
+		Node node7= new FileServer("192.168.1.7");
+		Node node8= new Node("192.168.1.8");
+		Node node9= new MQServer("192.168.1.9");
 
 		node1.setNextComponent(node2);
 		node2.setNextComponent(node3);

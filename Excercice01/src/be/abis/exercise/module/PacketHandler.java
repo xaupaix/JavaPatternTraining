@@ -1,17 +1,15 @@
 package be.abis.exercise.module;
 
-public abstract class PacketHandler extends LanComponent{
+public abstract class PacketHandler extends Node{
 
 	public PacketHandler(String address) {
 		super(address);
 	}
 
-	@Override
 	public void send(Packet packet) {
 		getNextComponent().receive(packet);
 	}
 
-	@Override
 	public void receive(Packet packet) {
 		toPrint();
 	}
